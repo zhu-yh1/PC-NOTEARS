@@ -64,11 +64,14 @@ myShd(output_dag, truth)
 
 #### Plot output graph alone
 ```r
+# in our example ground truth causal graph there are 5 causal genes and 25 altered genes. 
 gvarType = c(rep("Causal gene",5), rep("Altered gene", 25))
+# This is a subgroup
 gvarShape = rep("Gene", 30)
+# set manual colors for nodes
 manual_colors = c("Causal gene" = "#a2d2f1", "Altered gene" = "#c8d3d5")
-network_output = network_visualize(as.matrix(output_dag), gvarType, gvarShape)
 
+network_output = network_visualize(as.matrix(output_dag), gvarType, gvarShape)
 network_output$p + scale_color_manual(values = manual_colors)
 ```
 ![image text](https://github.com/zhu-yh1/PC-NOTEARS/blob/main/exmaples/output_network.png)
