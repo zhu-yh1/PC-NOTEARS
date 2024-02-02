@@ -1,2 +1,0 @@
-useDynLib(PCnt)
-exportPattern("^[[:alpha:]]+")
