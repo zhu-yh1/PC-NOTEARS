@@ -35,7 +35,7 @@ truth = as.matrix(truth)
 # take 1000 samples a small exmaple for shorter runtime
 data = data[1:1000,]
 ```
-#### Perform PC
+#### Perform PCnt
 ```r
 # Run PCnt
 # set lambda1 for NOTEARS l1 penalty and alpha for confidence level for PC
