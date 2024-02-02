@@ -21,9 +21,14 @@ library(ggpubr)
 #### Load dataset
 ```r
 # read in example data from package
+file_path <- system.file(package = "PCnt")
+print(file_path)
+
+# input data
 data =  read.table(file.path(file_path, "example_input.tsv"), sep="\t")
 data = as.matrix(data)
 
+# matched ground truth
 truth = read.table(file.path(file_path, "example_truth.tsv"), sep="\t")
 truth = as.matrix(truth)
 
