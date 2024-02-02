@@ -66,10 +66,10 @@ network_output = network_visualize(as.matrix(output_dag), gvarType, gvarShape)
 
 network_output$p + scale_color_manual(values = manual_colors)
 ```
-![image text](https://cloud.githubusercontent.com/assets/711743/25648417/57cd2c0c-2fe9-11e7-8753-b60ea2656faf.png)
+![image text](https://github.com/zhu-yh1/PC-NOTEARS/blob/main/exmaples/output_network.png)
 
 #### Plot truth and output with same layout
 ```r
 network_compare(output_dag, truth, gvarType, gvarShape, manual_colors, seed = 2)
 ```
-![image text](https://cloud.githubusercontent.com/assets/711743/25648417/57cd2c0c-2fe9-11e7-8753-b60ea2656faf.png)
+![image text](https://github.com/zhu-yh1/PC-NOTEARS/blob/main/exmaples/network_compare.png)
