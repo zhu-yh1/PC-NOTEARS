@@ -12,8 +12,6 @@ devtools::install_github("zhu-yh1/PC-NOTEARS/PCnt")
 ``` r
 library(PCnt)
 library(pcalg)
-library(Rcpp)
-library(RcppArmadillo)
 library(ggnetwork)
 library(igraph)
 library(intergraph)
@@ -26,34 +24,52 @@ library(ggpubr)
 data =  read.table(file.path(file_path, "example_input.tsv"), sep="\t")
 data = as.matrix(data)
 
-# take 1000 samples a small exmaple for shorter runtime
-data = data[1:1000,]
-
 truth = read.table(file.path(file_path, "example_truth.tsv"), sep="\t")
 truth = as.matrix(truth)
+
+# take 1000 samples a small exmaple for shorter runtime
+data = data[1:1000,]
 ```
 #### Perform PC
 ```r
-suffStat = list(C = cor(data), n = nrow(data))
-pc.fit = pc(suffStat,
-            indepTest = gaussCItest,
-            labels = colnames(data),
-            alpha = 0.05)
-pcres = summary(object = pc.fit)
-PC_no_edge = 1-pcres
+# Run PCnt
+# set lambda1 for NOTEARS l1 penalty and alpha for confidence level for PC
+output = PC_nt(data, lambda=0.01, alpha=0.05)
+
+# default lambda1=0.01m alpha=0.05
+output = PC_nt(data)
 ```
-#### Run NOTEARS with PC output as edge constraint
-```r
-```
+
 #### Enforce dag constraint on output
 ```r
+output_dag = adj2dag(output)
 ```
+
 #### Look at the metrics
 ```r
+# F1 for orientation
+getF1(output_dag, truth)
+#F1 for adjacency
+getAdjF1(output_dag, truth)
+#Orient accuracy
+getOrientAccuracy(output_dag, truth)
+#SHD
+myShd(output_dag, truth)
 ```
+
 #### Plot output graph alone
 ```r
+gvarType = c(rep("Causal gene",5), rep("Altered gene", 25))
+gvarShape = rep("Gene", 30)
+manual_colors = c("Causal gene" = "#a2d2f1", "Altered gene" = "#c8d3d5")
+network_output = network_visualize(as.matrix(output_dag), gvarType, gvarShape)
+
+network_output$p + scale_color_manual(values = manual_colors)
 ```
+![image text](https://cloud.githubusercontent.com/assets/711743/25648417/57cd2c0c-2fe9-11e7-8753-b60ea2656faf.png)
+
 #### Plot truth and output with same layout
 ```r
+network_compare(output_dag, truth, gvarType, gvarShape, manual_colors, seed = 2)
 ```
+![image text](https://cloud.githubusercontent.com/assets/711743/25648417/57cd2c0c-2fe9-11e7-8753-b60ea2656faf.png)
