@@ -1,0 +1,16 @@
+Package: PCnt
+Type: Package
+Title: My Package
+Version: 0.1.0
+Description: This package is an example R package.
+Encoding: UTF-8
+Imports:
+  Rcpp,
+  RcppArmadillo,
+  pcalg,
+  ggnetwork,
+  igraph,
+  intergraph,
+  ggpubr
+LinkingTo: Rcpp, RcppArmadillo
+RoxygenNote: 7.2.3
