@@ -1,23 +1,5 @@
 # PC-NOTEARS
-A hybrid method for causal effect estimation
-
-### Paper
 [A hybrid constrained continuous optimization approach for optimal causal discovery from biological data](https://academic.oup.com/bioinformatics/article/40/Supplement_2/ii87/7749067)
-```
-@article{Zhu2024Sep,
-	author = {Zhu, Yuehua and Benos, Panayiotis V. and Chikina, Maria},
-	title = {{A hybrid constrained continuous optimization approach for optimal causal discovery from biological data}},
-	journal = {Bioinformatics},
-	volume = {40},
-	number = {Supplement_2},
-	pages = {ii87--ii97},
-	year = {2024},
-	month = sep,
-	issn = {1367-4811},
-	publisher = {Oxford Academic},
-	doi = {10.1093/bioinformatics/btae411}
-}
-```
 
 ### Installation
 ```
@@ -93,6 +75,23 @@ network_output = network_visualize(as.matrix(output_dag), gvarType, gvarShape)
 network_output$p + scale_color_manual(values = manual_colors)
 ```
 ![image text](https://github.com/zhu-yh1/PC-NOTEARS/blob/main/exmaples/output_network.png)
+
+### Citation
+```
+@article{Zhu2024Sep,
+	author = {Zhu, Yuehua and Benos, Panayiotis V. and Chikina, Maria},
+	title = {{A hybrid constrained continuous optimization approach for optimal causal discovery from biological data}},
+	journal = {Bioinformatics},
+	volume = {40},
+	number = {Supplement_2},
+	pages = {ii87--ii97},
+	year = {2024},
+	month = sep,
+	issn = {1367-4811},
+	publisher = {Oxford Academic},
+	doi = {10.1093/bioinformatics/btae411}
+}
+```
 
 #### Plot truth and output with same layout
 ```r
