@@ -76,6 +76,12 @@ network_output$p + scale_color_manual(values = manual_colors)
 ```
 ![image text](https://github.com/zhu-yh1/PC-NOTEARS/blob/main/exmaples/output_network.png)
 
+#### Plot truth and output with same layout
+```r
+network_compare(output_dag, truth, gvarType, gvarShape, manual_colors, seed = 2)
+```
+![image text](https://github.com/zhu-yh1/PC-NOTEARS/blob/main/exmaples/network_compare.png)
+
 ### Citation
 ```
 @article{Zhu2024Sep,
@@ -92,9 +98,3 @@ network_output$p + scale_color_manual(values = manual_colors)
 	doi = {10.1093/bioinformatics/btae411}
 }
 ```
-
-#### Plot truth and output with same layout
-```r
-network_compare(output_dag, truth, gvarType, gvarShape, manual_colors, seed = 2)
-```
-![image text](https://github.com/zhu-yh1/PC-NOTEARS/blob/main/exmaples/network_compare.png)
