@@ -2,7 +2,7 @@
 A hybrid method for causal effect estimation
 
 ### Paper
-[A hybrid constrained continuous optimization approach for optimal causal discovery from biological data]([https://website-name.com](https://academic.oup.com/bioinformatics/article/40/Supplement_2/ii87/7749067))
+[A hybrid constrained continuous optimization approach for optimal causal discovery from biological data](https://academic.oup.com/bioinformatics/article/40/Supplement_2/ii87/7749067)
 ```
 @article{Zhu2024Sep,
 	author = {Zhu, Yuehua and Benos, Panayiotis V. and Chikina, Maria},
